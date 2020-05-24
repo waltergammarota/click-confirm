@@ -1,10 +1,14 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
+Object.defineProperty(exports, '__esModule', {
+    value: true
+});
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+function _interopDefault(ex) {
+    return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex;
+}
 
-var bPopover = _interopDefault(require('bootstrap-vue/es/components/popover/popover'));
+var bPopover = _interopDefault(require('bootstrap-vue'));
 
 var messagesDefault = {
     title: 'Are you sure?',
@@ -12,8 +16,75 @@ var messagesDefault = {
     no: 'No'
 };
 
-var component$1 = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('span',{ref:"trigger",attrs:{"id":_vm.randomId,"tabindex":"-1"},on:{"!click":function($event){return _vm.interceptEvent($event)}}},[_vm._t("default")],2),_vm._v(" "),_c('b-popover',{ref:"popover",staticClass:"click-confirm",attrs:{"container":_vm.container,"target":_vm.randomId,"show":_vm.isOpen,"placement":_vm.placement,"title":_vm.messages.title,"triggers":"blur"},on:{"update:show":function($event){_vm.isOpen=$event;},"hidden":_vm.onHidden}},[_c('div',{staticClass:"text-center"},[_c('button',{ref:"buttonYes",class:[_vm.yesClass, _vm.buttonSizeClass],on:{"click":function($event){$event.preventDefault();return _vm.onOk($event)}}},[_vm._t("confirm-yes-icon",[(_vm.yesIcon)?_c('span',{class:_vm.yesIcon,attrs:{"aria-hidden":"true"}}):_vm._e()]),_vm._v(" "+_vm._s(_vm.messages.yes)+" ")],2),_vm._v(" "),_c('button',{ref:"buttonNo",class:[_vm.noClass, _vm.buttonSizeClass],on:{"click":function($event){$event.preventDefault();return _vm.onCancel($event)}}},[_vm._t("confirm-no-icon",[(_vm.noIcon)?_c('span',{class:_vm.noIcon,attrs:{"aria-hidden":"true"}}):_vm._e()]),_vm._v(" "+_vm._s(_vm.messages.no)+" ")],2)])])],1)},staticRenderFns: [],
-    components: { bPopover: bPopover },
+var component$1 = {
+    render: function () {
+        var _vm = this;
+        var _h = _vm.$createElement;
+        var _c = _vm._self._c || _h;
+        return _c('div', [_c('span', {
+            ref: "trigger",
+            attrs: {
+                "id": _vm.randomId,
+                "tabindex": "-1"
+            },
+            on: {
+                "!click": function ($event) {
+                    return _vm.interceptEvent($event)
+                }
+            }
+        }, [_vm._t("default")], 2), _vm._v(" "), _c('b-popover', {
+            ref: "popover",
+            staticClass: "click-confirm",
+            attrs: {
+                "container": _vm.container,
+                "target": _vm.randomId,
+                "show": _vm.isOpen,
+                "placement": _vm.placement,
+                "title": _vm.messages.title,
+                "triggers": "blur"
+            },
+            on: {
+                "update:show": function ($event) {
+                    _vm.isOpen = $event;
+                },
+                "hidden": _vm.onHidden
+            }
+        }, [_c('div', {
+            staticClass: "text-center"
+        }, [_c('button', {
+            ref: "buttonYes",
+            class: [_vm.yesClass, _vm.buttonSizeClass],
+            on: {
+                "click": function ($event) {
+                    $event.preventDefault();
+                    return _vm.onOk($event)
+                }
+            }
+        }, [_vm._t("confirm-yes-icon", [(_vm.yesIcon) ? _c('span', {
+            class: _vm.yesIcon,
+            attrs: {
+                "aria-hidden": "true"
+            }
+        }) : _vm._e()]), _vm._v(" " + _vm._s(_vm.messages.yes) + " ")], 2), _vm._v(" "), _c('button', {
+            ref: "buttonNo",
+            class: [_vm.noClass, _vm.buttonSizeClass],
+            on: {
+                "click": function ($event) {
+                    $event.preventDefault();
+                    return _vm.onCancel($event)
+                }
+            }
+        }, [_vm._t("confirm-no-icon", [(_vm.noIcon) ? _c('span', {
+            class: _vm.noIcon,
+            attrs: {
+                "aria-hidden": "true"
+            }
+        }) : _vm._e()]), _vm._v(" " + _vm._s(_vm.messages.no) + " ")], 2)])])], 1)
+    },
+    staticRenderFns: [],
+    components: {
+        bPopover: bPopover
+    },
 
     data: function data() {
         return {
@@ -157,7 +228,9 @@ var component$1 = {render: function(){var _vm=this;var _h=_vm.$createElement;var
 
 var clickConfirmPlugin = function (Vue, params) {
     var name = 'click-confirm';
-    if (typeof params === 'string') { name = params; }
+    if (typeof params === 'string') {
+        name = params;
+    }
 
     Vue.component(name, component$1);
 };
